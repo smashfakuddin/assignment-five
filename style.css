@@ -29,7 +29,7 @@ body {
 }
 
 #foodItem div{
-    border: 1px solid green;
+ 
     text-align: center;
     width: 225px;
     padding: 15px;
@@ -41,6 +41,6 @@ body {
     left: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 50px;
-
+    grid-gap: 25px;
+    cursor: pointer;
 }
