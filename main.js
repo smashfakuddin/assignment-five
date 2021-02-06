@@ -5,23 +5,18 @@
 
 var inputName="";
 function testFunction() {
-    let inputName = document.getElementById('meal-input').value;
-    
+    let inputName = document.getElementById('meal-input').value;    
    anotherFunction(inputName);
    
 };
 
 function anotherFunction(inputName) {
-    let url = (`https://www.themealdb.com/api/json/v1/1/search.php?f=${inputName}`)
-    fetch(url)
+    let url1 = (`https://www.themealdb.com/api/json/v1/1/search.php?f=${inputName}`)
+    let url2 = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputName}`)
+    fetch([url1 && url2])
         .then(response => response.json())
-        .then(data => foodDetect(data))
+        .then(data => foodDetect(data))        
 }
-
-// let url = (`https://www.themealdb.com/api/json/v1/1/search.php?f=${testName}`)
-// fetch(url)
-//     .then(response => response.json())
-//     .then(data => foodDetect(data))
 
 const foodDetect = food => {
     console.log(food.meals);
@@ -36,6 +31,6 @@ const foodDetect = food => {
              `
         foodDiv.innerHTML = foodInfo;
         foodItem.appendChild(foodDiv);
-
+        document.getElementById('meal-input').value ='';
     }
 }
