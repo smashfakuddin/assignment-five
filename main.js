@@ -1,4 +1,4 @@
-document.getElementById('search-button').addEventListener('click', function(){
+document.getElementById('search-button').addEventListener('click', function () {
     const inputName = document.getElementById('meal-input').value;
     console.log(inputName);
 })
@@ -12,14 +12,17 @@ fetch(url)
 
 const foodDetect = food => {
     console.log(food.meals);
-    const ul = document.getElementById("foodItem");
+    const foodItem = document.getElementById("foodItem");
     for (let i = 0; i < food.meals.length; i++) {
         const foodName = food.meals[i];
-        const li = document.createElement('li');
-        li.innerText =foodName.strMeal;
-        ul.appendChild(li);
-        
+        const foodDiv = document.createElement("div");
+
+        const foodInfo = `
+             <img  src="${foodName.strMealThumb}" alt="">   
+             <h3 class="item">${foodName.strMeal}</h3>
+             `
+        foodDiv.innerHTML = foodInfo;
+        foodItem.appendChild(foodDiv);
+
     }
-
-
 }
