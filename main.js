@@ -1,15 +1,15 @@
 
 let inputName="";
-function testFunction() {
+function searchFood() {
     document.getElementById('ShowfoodInfo').innerHTML='';
     document.getElementById('foodItem').innerHTML ='';
     let inputName = document.getElementById('meal-input').value;    
-   anotherFunction(inputName);
+    foodSearchResult(inputName);
   
   
 };
 
-function anotherFunction(inputName) {
+function foodSearchResult(inputName) {
     let url1 = (`https://www.themealdb.com/api/json/v1/1/search.php?f=${inputName}`)
     let url2 = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputName}`)
     fetch([url1 && url2])
@@ -18,7 +18,7 @@ function anotherFunction(inputName) {
 }
 
 const foodDetect = food => {
-    console.log(food.meals);
+  
     const foodItem = document.getElementById("foodItem");
     for (let i = 0; i < food.meals.length; i++) {
         const foodName = food.meals[i];
@@ -47,7 +47,6 @@ const displayFoodDetail= name =>{
 }
 
 function showFoodDetails(meals){
-   console.log(meals);
    const  ShowDetailUser = document.getElementById('ShowfoodInfo');
     ShowDetailUser.innerHTML =`
         <img src="${meals.strMealThumb}" alt="">

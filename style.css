@@ -46,12 +46,14 @@ body {
 }
 #ShowfoodInfo{
     position: relative;
-    top: 250px;
+    top: 215px;
     left: 500px;
+    width: 30%;
 }
 #ShowfoodInfo img{
     width: 400px;
-    height: 200px;    
+    height: 200px; 
+    border-radius: 10px;   
 }
 #ShowfoodInfo p{
     color: rgb(107, 103, 103);
