@@ -66,3 +66,7 @@ body {
     color: rgb(107, 103, 103);
     font-size: 15px;
 }
+/* navbar */
+.flex{
+    display: flex;
+}

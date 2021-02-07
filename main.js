@@ -45,7 +45,7 @@ const displayFoodDetail = name => {
         .then(data => showFoodDetails(data.meals[0]))
 }
 
-const showFoodDetails = meals=> {
+const showFoodDetails = meals => {
     const ShowDetailUser = document.getElementById('ShowfoodInfo');
     ShowDetailUser.innerHTML = `
         <img src="${meals.strMealThumb}" alt="">
@@ -56,7 +56,6 @@ const showFoodDetails = meals=> {
         <p>${meals.strIngredient3}</p>
         <p>${meals.strIngredient4}</p>
         <p>${meals.strIngredient5}</p>
-        <p>${meals.strIngredient6}</p>
-        
+        <p>${meals.strIngredient6}</p>       
     `
 }
