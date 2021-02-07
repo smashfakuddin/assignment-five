@@ -1,24 +1,23 @@
-
-let inputName="";
-function searchFood() {
-    document.getElementById('ShowfoodInfo').innerHTML='';
-    document.getElementById('foodItem').innerHTML ='';
-    let inputName = document.getElementById('meal-input').value;    
+let inputName = "";
+const searchFood = () => {
+    document.getElementById('ShowfoodInfo').innerHTML = '';
+    document.getElementById('foodItem').innerHTML = '';
+    let inputName = document.getElementById('meal-input').value;
     foodSearchResult(inputName);
-  
-  
+
+
 };
 
-function foodSearchResult(inputName) {
+const foodSearchResult = inputName => {
     let url1 = (`https://www.themealdb.com/api/json/v1/1/search.php?f=${inputName}`)
     let url2 = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputName}`)
     fetch([url1 && url2])
         .then(response => response.json())
-        .then(data => foodDetect(data))        
+        .then(data => foodDetect(data))
 }
 
 const foodDetect = food => {
-  
+
     const foodItem = document.getElementById("foodItem");
     for (let i = 0; i < food.meals.length; i++) {
         const foodName = food.meals[i];
@@ -32,23 +31,23 @@ const foodDetect = food => {
              `
         foodDiv.innerHTML = foodInfo;
         foodItem.appendChild(foodDiv);
-        document.getElementById('meal-input').value ='';
-        
-        
+        document.getElementById('meal-input').value = '';
+
+
     }
-    
+
 }
 
-const displayFoodDetail= name =>{
-    const anotherUrl= (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
+const displayFoodDetail = name => {
+    const anotherUrl = (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
     fetch(anotherUrl)
-    .then(response => response.json())
-    .then(data => showFoodDetails(data.meals[0]))
+        .then(response => response.json())
+        .then(data => showFoodDetails(data.meals[0]))
 }
 
-function showFoodDetails(meals){
-   const  ShowDetailUser = document.getElementById('ShowfoodInfo');
-    ShowDetailUser.innerHTML =`
+const showFoodDetails = meals=> {
+    const ShowDetailUser = document.getElementById('ShowfoodInfo');
+    ShowDetailUser.innerHTML = `
         <img src="${meals.strMealThumb}" alt="">
         <h1>${meals.strMeal}</h1>
         <h3>Ingredient</h3>

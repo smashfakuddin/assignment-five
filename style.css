@@ -23,19 +23,23 @@ body {
     border-radius: 5px;
     width: 100px;
 }
-
+#search-button:hover{
+    background-color: tomato;
+    color: white;
+}
 #foodItem img {
     width: 100%;
+    border-radius: 15px;
 }
 
-#foodItem div{
- 
+#foodItem div {
     text-align: center;
     width: 225px;
     padding: 15px;
     border-radius: 15px;
 }
-#foodItem{
+
+#foodItem {
     position: relative;
     top: 250px;
     left: 50px;
@@ -44,18 +48,21 @@ body {
     grid-gap: 25px;
     cursor: pointer;
 }
-#ShowfoodInfo{
+
+#ShowfoodInfo {
     position: relative;
     top: 215px;
-    left: 500px;
+    left: 450px;
     width: 30%;
 }
-#ShowfoodInfo img{
-    width: 400px;
-    height: 200px; 
-    border-radius: 10px;   
+
+#ShowfoodInfo img {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
 }
-#ShowfoodInfo p{
+
+#ShowfoodInfo p {
     color: rgb(107, 103, 103);
     font-size: 15px;
 }
