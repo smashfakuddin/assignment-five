@@ -44,3 +44,16 @@ body {
     grid-gap: 25px;
     cursor: pointer;
 }
+#ShowfoodInfo{
+    position: relative;
+    top: 250px;
+    left: 500px;
+}
+#ShowfoodInfo img{
+    width: 400px;
+    height: 200px;    
+}
+#ShowfoodInfo p{
+    color: rgb(107, 103, 103);
+    font-size: 15px;
+}

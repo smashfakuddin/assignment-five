@@ -1,6 +1,7 @@
 
 let inputName="";
 function testFunction() {
+    document.getElementById('ShowfoodInfo').innerHTML='';
     document.getElementById('foodItem').innerHTML ='';
     let inputName = document.getElementById('meal-input').value;    
    anotherFunction(inputName);
@@ -24,7 +25,7 @@ const foodDetect = food => {
         const foodDiv = document.createElement("div");
 
         const foodInfo = `
-        <div onclick="testFunc('${foodName.strMeal}')">
+        <div onclick="displayFoodDetail('${foodName.strMeal}')">
              <img  src="${foodName.strMealThumb}" alt="">   
              <h3 class="item">${foodName.strMeal}</h3>
              </div.
@@ -38,7 +39,26 @@ const foodDetect = food => {
     
 }
 
-function testFunc(name){
+const displayFoodDetail= name =>{
     const anotherUrl= (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
-    console.log(anotherUrl);
+    fetch(anotherUrl)
+    .then(response => response.json())
+    .then(data => showFoodDetails(data.meals[0]))
+}
+
+function showFoodDetails(meals){
+   console.log(meals);
+   const  ShowDetailUser = document.getElementById('ShowfoodInfo');
+    ShowDetailUser.innerHTML =`
+        <img src="${meals.strMealThumb}" alt="">
+        <h1>${meals.strMeal}</h1>
+        <h3>Ingredient</h3>
+        <p>${meals.strIngredient1}</p>
+        <p>${meals.strIngredient2}</p>
+        <p>${meals.strIngredient3}</p>
+        <p>${meals.strIngredient4}</p>
+        <p>${meals.strIngredient5}</p>
+        <p>${meals.strIngredient6}</p>
+        
+    `
 }
