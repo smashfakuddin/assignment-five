@@ -1,13 +1,11 @@
-// document.getElementById('search-button').addEventListener('click', function(){
-//     const inputName = document.getElementById('meal-input').value; 
-//     //  foodDetect(food); 
-// })
 
-var inputName="";
+let inputName="";
 function testFunction() {
+    document.getElementById('foodItem').innerHTML ='';
     let inputName = document.getElementById('meal-input').value;    
    anotherFunction(inputName);
-   
+  
+  
 };
 
 function anotherFunction(inputName) {
@@ -26,11 +24,21 @@ const foodDetect = food => {
         const foodDiv = document.createElement("div");
 
         const foodInfo = `
+        <div onclick="testFunc('${foodName.strMeal}')">
              <img  src="${foodName.strMealThumb}" alt="">   
              <h3 class="item">${foodName.strMeal}</h3>
+             </div.
              `
         foodDiv.innerHTML = foodInfo;
         foodItem.appendChild(foodDiv);
         document.getElementById('meal-input').value ='';
+        
+        
     }
+    
+}
+
+function testFunc(name){
+    const anotherUrl= (`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`);
+    console.log(anotherUrl);
 }
