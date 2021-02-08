@@ -14,6 +14,7 @@ const foodSearchResult = inputName => {
     fetch([url1 && url2])
         .then(response => response.json())
         .then(data => foodDetect(data))
+        .catch(error => handleError("Sorry! There is no match.Try again"))
 }
 
 const foodDetect = food => {
@@ -58,4 +59,11 @@ const showFoodDetails = meals => {
         <p>${meals.strIngredient5}</p>
         <p>${meals.strIngredient6}</p>       
     `
+}
+
+const handleError = error =>{
+    const errorMassage = document.getElementById('display-error');
+    errorMassage.innerText = error;
+    
+
 }
