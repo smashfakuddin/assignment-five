@@ -1,12 +1,10 @@
 let inputName = "";
 const searchFood = () => {
-    document.getElementById('display-error').innerText ='';
+    document.getElementById('display-error').innerText = '';
     document.getElementById('ShowfoodInfo').innerHTML = '';
     document.getElementById('foodItem').innerHTML = '';
     let inputName = document.getElementById('meal-input').value;
     foodSearchResult(inputName);
-
-
 };
 
 const foodSearchResult = inputName => {
@@ -34,10 +32,7 @@ const foodDetect = food => {
         foodDiv.innerHTML = foodInfo;
         foodItem.appendChild(foodDiv);
         document.getElementById('meal-input').value = '';
-
-
     }
-
 }
 
 const displayFoodDetail = name => {
@@ -62,7 +57,7 @@ const showFoodDetails = meals => {
     `
 }
 
-const handleError = error =>{
+const handleError = error => {
     const errorMassage = document.getElementById('display-error');
     errorMassage.innerText = error;
 }
