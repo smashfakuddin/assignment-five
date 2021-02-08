@@ -1,5 +1,6 @@
 let inputName = "";
 const searchFood = () => {
+    document.getElementById('display-error').innerText ='';
     document.getElementById('ShowfoodInfo').innerHTML = '';
     document.getElementById('foodItem').innerHTML = '';
     let inputName = document.getElementById('meal-input').value;
@@ -64,6 +65,4 @@ const showFoodDetails = meals => {
 const handleError = error =>{
     const errorMassage = document.getElementById('display-error');
     errorMassage.innerText = error;
-    
-
 }
